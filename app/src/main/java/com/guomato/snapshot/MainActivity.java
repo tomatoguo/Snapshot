@@ -42,12 +42,17 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnMe
     @Override
     public void onItemClick(int position) {
         if (position != -1) {
+            String album = mAlbumItems.get(position);
+
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction tc = fm.beginTransaction();
 
-            Fragment fragment = SceneFragment.newInstance(mAlbumItems.get(position));
+            Fragment fragment = fm.findFragmentByTag(album);
+            if(fragment == null) {
+                fragment = SceneFragment.newInstance(album);
+            }
             if (fragment != null) {
-                tc.replace(R.id.content_container, fragment);
+                tc.replace(R.id.content_container, fragment, album);
             }
 
             tc.commitAllowingStateLoss();

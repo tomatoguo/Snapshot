@@ -89,8 +89,6 @@ public class SceneFragment extends Fragment implements SceneManager.Callback {
     @Override
     public void onSceneImageDownload(final ImageView imageView, Bitmap bitmap) {
         if (imageView.isShown()) {
-            LogHelper.trace(imageView + " is visible");
-
             Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
 
             animation.setAnimationListener(new Animation.AnimationListener() {
@@ -113,8 +111,6 @@ public class SceneFragment extends Fragment implements SceneManager.Callback {
             imageView.setImageBitmap(bitmap);
             imageView.startAnimation(animation);
         } else {
-            LogHelper.trace(imageView + " is invisible");
-
             imageView.setImageBitmap(bitmap);
         }
     }
