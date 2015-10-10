@@ -1,0 +1,11 @@
+<resources>
+
+    <dimen name="start_up_text_size">48sp</dimen>
+
+    <dimen name="slide_menu_width">240dp</dimen>
+
+    <dimen name="menu_item_height">48dp</dimen>
+    <dimen name="menu_item_padding">18dp</dimen>
+    <dimen name="menu_item_text_size">18sp</dimen>
+
+</resources>
